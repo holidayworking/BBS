@@ -1,0 +1,14 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<form method="post" action="[% uri_for('/post') %]">
+    <input type="text" name="body" />
+    <input type="submit" value="Send" />
+</form>
+
+<ul>
+[% FOR entry IN entries %]
+    <li>[% entry.entry_id %]. [% entry.body %]</li>
+[% END %]
+</ul>
+
+[% END %]
